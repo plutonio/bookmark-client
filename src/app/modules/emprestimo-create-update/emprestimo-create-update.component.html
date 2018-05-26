@@ -1,0 +1,35 @@
+<div class="container">
+    <form (ngSubmit)="salvar()">
+  
+      <br/>
+      <h3>{{titulo}}</h3>
+      <br/>
+  
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="nomeLivro">Nome do Livro</label>
+          <input type="text" class="form-control" id="nomeLivro" placeholder="" [(ngModel)]="emprestimo.nomeLivro"
+                 name="nomeLivro">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="amigo">Amigo</label>
+          <input type="text" class="form-control" id="amigo" placeholder="Amigo" [(ngModel)]="emprestimo.amigo"
+                 name="amigo">
+        </div>
+      </div>
+  
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="dataEmprestimo">Data de Emprestimo</label>
+          <input type="date" class="form-control" id="dataEmprestimo" [(ngModel)]="livro.dataEmprestimo"
+                 name="dataEmprestimo">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="dataEntrega">Data de Entrega</label>
+          <input type="date" class="form-control" id="dataEntrega" [(ngModel)]="livro.dataEntrega" name="dataEntrega">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+  </div>
+  

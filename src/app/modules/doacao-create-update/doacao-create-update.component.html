@@ -1,0 +1,30 @@
+<div class="container">
+    <form (ngSubmit)="salvar()">
+  
+      <br/>
+      <h3>{{titulo}}</h3>
+      <br/>
+  
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="descricao">Descricao</label>
+          <input type="text" class="form-control" id="descricao" placeholder="Descricao" [(ngModel)]="doacao.descricao"
+                 name="descricao">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="status">Status</label>
+          <input type="text" class="form-control" id="status" placeholder="Status" [(ngModel)]="doacao.status"
+                 name="status">
+        </div>
+      </div>
+  
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="livro">Livro</label>
+          <input type="text" class="form-control" id="livro" placeholder="Livro" [(ngModel)]="doacao.livro" name="livro">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+  </div>
+  

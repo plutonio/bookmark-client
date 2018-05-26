@@ -1,0 +1,71 @@
+<div class="row search">
+  <div class="col-md-12">
+    <form class="form-group">
+      <input type="text" class="form-control input-search" placeholder="Procurar livro" [(ngModel)]="query" (keyup.enter)="search()"
+        name="search">
+    </form>
+  </div>
+</div>
+
+
+<!-- <div class="row search">
+  <div id="custom-search-input">
+    <div class="input-group col-md-12">
+      <input type="text" class="search-query form-control" placeholder="Digite o nome do Livro" [(ngModel)]="query" (keyup.enter)="search()"
+        name="search" />
+      <span class="input-group-btn">
+        <button class="btn btn-danger" type="button"> -->
+<!--<span class=" glyphicon glyphicon-search"></span>-->
+<!-- <span class="oi oi-magnifying-glass"></span>
+        </button>
+      </span>
+    </div>
+  </div>
+</div> -->
+
+<div *ngIf="booksData"></div>
+<!--<ul style="display: flex; list-style: none; flex-wrap: wrap; height: 200px; margin-left: 8%;">
+  <li style="width: 250px; height: 500px;" *ngFor="let bookData of booksData">
+    <div>
+      <div class="card" style="width: 14rem;">
+        <div *ngIf="bookData.volumeInfo.imageLinks" id="img">
+          <img class="card-img-top img-thumbnail" id="img-thumbnail" src="{{bookData.volumeInfo.imageLinks.smallThumbnail}}" alt="Card image cap">
+        </div>
+        <div *ngIf="!bookData.volumeInfo.imageLinks" id="img">
+          <img class="card-img-top img-thumbnail" id="img-thumbnail" src="./../../../../assets/imagens/logo-bookmark.svg" alt="Card image cap">
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            <strong>{{bookData.volumeInfo.title}}</strong>
+          </p>
+          <p class="card-text">{{bookData.volumeInfo.authors}}</p>
+          <a [routerLink]="['/livro', bookData.id]" class="btn btn-primary">Visualizar</a>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul> -->
+<ul class="card-group">
+  <li class="card-items" *ngFor="let bookData of booksData">
+    <div class="card">
+      <div class="card-image" *ngIf="bookData.volumeInfo.imageLinks" id="img">
+        <img class="card-img-top img-thumbnail" id="img-thumbnail" src="{{bookData.volumeInfo.imageLinks.smallThumbnail}}" alt="Card image cap">
+      </div>
+      <div class="card-image" *ngIf="!bookData.volumeInfo.imageLinks" id="img">
+        <img class="card-img-top img-thumbnail" id="img-thumbnail" src="./../../../../assets/imagens/logo-bookmark.svg" alt="Card image cap">
+      </div>
+      <div class="card-block">
+        <p class="card-title">
+          <strong *ngIf="bookData.volumeInfo.title?.length > 50">{{bookData.volumeInfo.title | slice:0:53}}..</strong>
+          <strong *ngIf="bookData.volumeInfo.title?.length < 50">{{bookData.volumeInfo.title}}</strong>
+        </p>
+        <p class="card-text">{{bookData.volumeInfo.authors}}</p>
+        <a [routerLink]="['/livro', bookData.id]" class="btn btn-primary">Visualizar</a>
+      </div>
+    </div>
+  </li>
+</ul>
+
+
+
+<!--routerLink="/livro" [queryParams]="bookData"-->

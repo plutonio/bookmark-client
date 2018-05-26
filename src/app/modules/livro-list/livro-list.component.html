@@ -1,0 +1,37 @@
+<p>
+  Meus Livros
+</p>
+<div class="container">
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Titulo</th>
+        <th scope="col">Autor</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let l of livros">
+        <th scope="row">{{l.id}}</th>
+        <td>{{l.titulo}}</td>
+        <td>{{l.autor}}</td>
+        <td>
+          <a [routerLink]="['/livro', l.id]">
+            <button class="btn btn-info">Editar</button>
+          </a>
+        </td>
+        <td>
+          <button class="btn btn-danger" (click)="deleteLivro(l)">Deletar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div style="bottom: 45px; right: 24px;">
+  <a routerLink="/livro">
+    <button class="btn btn-primary">Cadastrar</button>
+  </a>
+</div>

@@ -1,0 +1,37 @@
+<div class="container">
+  <form (ngSubmit)="salvar()">
+
+    <br/>
+    <img class="img-thumbnail" id="img-thumbnail-book" src="{{book.imageLinks.smallThumbnail}}" alt="image book">
+    <br/><br/>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="titulo">Título</label>
+        <input type="text" class="form-control" id="titulo" placeholder="Titulo" [(ngModel)]="book.title" name="titulo"
+          disabled>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="autor">Autor(es)</label>
+        <input type="text" class="form-control" id="autor" placeholder="Autor" [(ngModel)]="book.authors" name="autor"
+          disabled>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="descricao">Descrição</label>
+      <textarea class="form-control" id="descricao" placeholder="" [(ngModel)]="book.description" name="descricao" disabled></textarea>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="dataInicio">Data de Inicio</label>
+        <input type="date" class="form-control" id="dataInicio" [(ngModel)]="livro.dataInicioLeitura" name="dataInicio">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="dataFim">Data Fim</label>
+        <input type="date" class="form-control" id="dataFim" [(ngModel)]="livro.dataFimLeitura" name="dataFim">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <br/><br/>
+  </form>
+</div>

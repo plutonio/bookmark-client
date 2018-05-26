@@ -1,0 +1,33 @@
+body {
+
+    padding-top: 50px;
+ 
+ }
+ 
+ .starter-template {
+ 
+     padding: 3rem 1.5rem;
+ 
+ }
+
+#navbar{
+
+    box-shadow: darkgrey;
+    border-bottom-style: outset;
+    border-bottom-color: rgba(0, 0, 0, 0.19);
+    
+}
+
+.navbar-brand {
+    color: #A2A2A2 !important;
+}
+
+li a{
+
+    color:#A2A2A2;
+}
+
+.nav-link:hover {
+    //background-color: darkblue;
+    color: red !important;
+}
